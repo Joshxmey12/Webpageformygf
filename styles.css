@@ -1,0 +1,247 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Aplicar Poppins a todo el cuerpo */
+    background: url('gatopache.jpg') no-repeat center center fixed; /* Imagen de fondo personalizada */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    color: #333333;
+    text-align: center;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh; /* Altura completa del navegador */
+    position: relative;
+}
+
+.container {
+    max-width: px; /* Ajuste para dispositivos móviles */
+    background: white;
+    padding: 20px;
+    border: 5px solid #FADADD; /* Bordes rosa pastel */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Centrar contenido */
+    z-index: 1;
+    animation: fadeIn 1s ease-in; /* Animación de desvanecimiento */
+}
+
+h1 {
+    font-size: 1.5em; /* Ajuste para dispositivos móviles */
+    color: #ff6666;
+    margin-bottom: 20px;
+}
+
+.cariño-text {
+    font-size: 1em; /* Ajuste para dispositivos móviles */
+}
+
+.button {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Ajuste para dispositivos móviles */
+    text-align: center;
+    display: inline-block;
+    margin: 10px 0; /* Añadido margen */
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em; /* Ajuste para dispositivos móviles */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff3333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+.love-button {
+    background-color: #FF91A4; /* Color rosa salmón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+}
+
+.love-button:hover {
+    background-color: #ff6666;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+.message-container {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+    text-align: center; /* Centrar contenido */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gif {
+    width: 100%;
+    max-width: 200px; /* Ajuste para dispositivos móviles */
+    border-radius: 15px; /* Bordes redondeados */
+    margin-top: 20px;
+}
+
+.signature {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    color: #FF91A4; /* Color rosa salmón */
+    z-index: 2; /* Asegurar que el texto esté encima del fondo */
+}
+
+.bottom-left-link {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.ver-link {
+    font-size: 0.8em; /* Hacer el enlace pequeño */
+    color: #333;
+    text-decoration: none;
+}
+
+.ver-link:hover {
+    color: #ff6666; /* Cambiar color al pasar el ratón */
+}
+
+.music-button {
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.music-button:hover {
+    background-color: #ff3333;
+}
+
+/* Estilos para la carta */
+.love-letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: #FADADD; /* Color rosa pastel */
+    border: 2px solid #ff6666;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.love-letter-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.heart-container {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heart {
+    width: 50px; /* Ajusta el tamaño del GIF aquí */
+    height: auto; /* Mantener la proporción */
+    cursor: pointer;
+}
+
+.note-content {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ff6666;
+    border-radius: 5px;
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.response-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ff6666;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.send-button {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #ff3333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+.response-container {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ff6666;
+    border-radius: 5px;
+}
+
+.response-message {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.back-button:hover {
+    background-color: #ff3333;
+}

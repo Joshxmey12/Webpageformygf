@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Meyvi esposhita</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <!-- Favicon GIF -->
+    <link rel="icon" type="image/gif" href="Sirius.gif">
+    <style>
+        /* Estilo para el GIF en la parte superior */
+        .top-gif {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            height: 50px; /* Ajusta el tamaño del GIF según sea necesario */
+        }
+
+        /* Estilo para el mensaje en la carta */
+        .note-message {
+            font-size: 0.9em; /* Ajuste de tamaño de fuente */
+            color: #333; /* Color del texto */
+            background-color: #FADADD; /* Fondo pastel */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ff6666;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            white-space: pre-wrap; /* Para respetar saltos de línea */
+        }
+    </style>
+</head>
+<body>
+    <!-- Agregar el GIF en la parte superior de la página sin mover el contenido -->
+    <img src="Albert.gif" alt="Albert" class="top-gif">
+
+    <div class="container">
+        <h1>Feliz San Valentín, mi amor</h1>
+        <p class="cariño-text">¿Quieres estar por siempre conmigo?</p>
+        <div class="initial-buttons">
+            <button class="button" onclick="showInitialMessage('si')">¡Sí, mi chillsharktoso!</button>
+            <button class="button cursi-button" onclick="showInitialMessage('cursi')">¡Eres muy cursi!</button>
+        </div>
+        <div class="cursi-buttons" style="display: none;">
+            <button class="button" onclick="showMessage('si')">¡Sí, mi chillsharktoso!</button>
+            <button class="button no-button" onclick="showMessage('no')">No</button>
+        </div>
+        <div class="love-buttons" style="display: none;">
+            <button class="button love-button">Realmente te amo</button>
+        </div>
+        <div class="message-container" id="messageContainer">
+            <img id="messageGif" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Gif de gato" class="gif">
+            <p id="message">Te amo mucho mi esposhita</p>
+        </div>
+    </div>
+    <div class="signature">
+        Para mi esposa Mey
+    </div>
+    <div class="bottom-left-link">
+        <a href="#" class="ver-link">Ver</a>
+    </div>
+    <audio id="backgroundMusic">
+        <source src="Myblood.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+    <audio id="nextMusic">
+        <source src="Smithhh.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+    <audio id="thirdMusic">
+        <source src="Car radio.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+    <button onclick="playMusic()" class="music-button">Reproducir música</button>
+
+    <div id="loveLetter" class="love-letter" style="display: none;">
+        <div class="love-letter-content">
+            <div class="heart-container">
+                <img id="heartGif" src="Sirius.gif" alt="Corazón" class="heart" onclick="toggleLetter()">
+            </div>
+            <div class="note-message">
+                Realmente aprecio el tiempo que estoy contigo y aunque la distancia es algo que nos ha tenido en lejania, compartir cada experiencia contigo han sido los mejores momentos de mi vida, siempre hago un esfuerzo enorme porque te amo y eres la única persona en este planeta por el cual daría lo que fuera con tal de ver tu sonrisa y escucharte decirme te amo o escucharte cuando me cuentas sobre Honkai. Me parece sumamente adorable tener una novia tan especial como tu pero no solamente te veo como mi pareja, eres mi vida, mi compañera y aunque existieron y existiran malos momentos se que podremos afrontarlos juntos. Cumplamos ese sueño que queremos juntos y te prometo amor que llegare pronto, sin importar lo que pase estaré para ti, además quiero dormir contigo y me debes esos patacones.
+            </div>
+            <input type="text" id="responseInput" class="response-input" placeholder="Tu respuesta aquí...">
+            <button class="send-button" onclick="sendResponse()">Enviar</button>
+            <div class="response-container" id="responseContainer" style="display: none;">
+                <p class="response-message" id="responseMessage"></p>
+            </div>
+            <button class="back-button" onclick="toggleLetter()">Back</button>
+        </div>
+    </div>
+    
+    <script>
+        const messages = {
+            si: [
+                "Te amo mucho mi esposhita",
+                "Mi gatopache que amo",
+                "Eres mi todo",
+                "Gracias por estar siempre a mi lado",
+                "Cada día contigo es un regalo"
+            ],
+            no: [
+                "Por favor mi esposhita,",
+                "Sabes que te amo demasiado",
+                "Si aceptas te cuido a Lupin (tu gato)",
+                "No te olvides de nuestro amor"
+            ]
+        };
+
+        function showInitialMessage(type) {
+            if (type === 'cursi') {
+                document.querySelector('.initial-buttons').style.display = 'none';
+                document.querySelector('.cursi-buttons').style.display = 'block';
+            } else {
+                showMessage(type);
+            }
+        }
+
+        function showMessage(type) {
+            const randomMessage = messages[type][Math.floor(Math.random() * messages[type].length)];
+            document.getElementById('message').textContent = randomMessage;
+            document.getElementById('messageContainer').style.display = 'block';
+
+            if (type === 'si') {
+                document.getElementById('messageContainer').style.transition = 'transform 2s';
+                document.getElementById('messageContainer').style.transform = 'scale(1.2)';
+                document.getElementById('messageGif').src = "Seth.gif"; // Cambiar a Seth.gif
+                document.querySelector('.no-button').style.display = 'none';
+
+                // Cambiar "¡Sí, mi chillsharktoso!" a "Te amo" con una transición suave
+                const siButton = document.querySelector('.cursi-buttons button[onclick="showMessage(\'si\')"]');
+                siButton.style.transition = 'opacity 0.5s ease-out';
+                siButton.style.opacity = '0';
+                setTimeout(() => {
+                    siButton.textContent = 'Te amo';
+                    siButton.style.color = '#000000';
+                    siButton.style.opacity = '1';
+                }, 500);
+            } else if (type === 'no') {
+                document.getElementById('messageGif').src = "Lupin.gif"; // Asegúrate de que el nombre del archivo sea correcto
+                document.querySelector('.no-button').style.transition = 'transform 0.5s';
+                document.querySelector('.no-button').style.transform = 'scale(0.8)';
+            }
+            document.getElementById('message').style.color = type === 'no' ? '#7CFC00' : '#333333';
+        }
+
+        function playMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const nextMusic = document.getElementById('nextMusic');
+            const thirdMusic = document.getElementById('thirdMusic');
+            music.play();
+
+            // Reproduce la segunda canción cuando termina la primera
+            music.onended = function() {
+                nextMusic.play();
+            };
+
+            // Reproduce la tercera canción cuando termina la segunda
+            nextMusic.onended = function() {
+                thirdMusic.play();
+            };
+        }
+
+        function toggleLetter() {
+            const loveLetter = document.getElementById('loveLetter');
+            loveLetter.style.display = (loveLetter.style.display === 'none' || loveLetter.style.display === '') ? 'block' : 'none';
+        }
+
+        function sendResponse() {
+            const responseInput = document.getElementById('responseInput');
+            const responseMessage = document.getElementById('responseMessage');
+            const responseContainer = document.getElementById('responseContainer');
+
+            if (responseInput.value.trim() !== '') {
+                responseMessage.textContent = responseInput.value;
+                responseContainer.style.display = 'block';
+                responseInput.value = '';
+            }
+        }
+
+        document.querySelector('.ver-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevenir comportamiento por defecto del enlace
+            toggleLetter();
+        });
+    </script>
+</body
